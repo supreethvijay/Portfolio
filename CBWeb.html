@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CalmBridge Onboarding</title>
+    <!-- Google Fonts for typography (Inter) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="CBWeb.css">
+</head>
+<body class="onboarding-body">
+
+    <!-- STEP 0: Selection Screen -->
+    <div class="onboarding-container" id="step-0-container">
+        <!-- Logo & Header -->
+        <header class="onboarding-header">
+            <div class="logo-wrapper">
+                <img src="assets/Calmbridge/Logo.png" alt="CalmBridge Logo" class="cb-logo" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MCIgaGVpZ2h0PSI4MCIgdmlld0JveD0iMCAwIDEwMCAxMDAiPjxjaXJjbGUgY3g9IjUwIiBjeT0iNTAiIHI9IjQwIiBmaWxsPSIjNmE0YzkzIi8+PC9zdmc+'">
+            </div>
+            <h1 class="welcome-title">Welcome to CalmBridge,</h1>
+            <h2 class="welcome-subtitle">Reflect. Breathe. Feel better !!!</h2>
+            <p class="support-text">CalmBridge is here to support your journey. I'm joining as a...</p>
+        </header>
+
+        <!-- Role Selection Cards -->
+        <div class="role-cards-container">
+            <!-- Individual Card -->
+            <div class="role-card" id="card-individual">
+                <div class="role-card-content">
+                    <div class="role-icon">
+                        <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="black" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle><line x1="18" y1="8" x2="18" y2="21"></line><path d="M16 8h4"></path></svg>
+                    </div>
+                    <h3 class="role-title">Individual</h3>
+                    <p class="role-desc">Track - Reflect - Heal</p>
+                    <div class="role-actions">
+                        <button class="btn-primary login-btn" onclick="selectRole('individual', 'login')">Login</button>
+                        <button class="btn-outline register-btn" onclick="selectRole('individual', 'register')">Register</button>
+                    </div>
+                </div>
+                <div class="role-illustration">
+                    <img src="assets/Calmbridge/individual-illustration.png" alt="Individual Illustration" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMjAiIGhlaWdodD0iMTIwIiB2aWV3Qm94PSIwIDAgMTIwIDEyMCI+PHJlY3Qgd2lkdGg9IjEyMCIgaGVpZ2h0PSIxMjAiIGZpbGw9IiNmM2Y0ZjYiLz48dGV4dCB4PSI1MCIgeT0iNTAlIiBkb21pbmFudC1iYXNlbGluZT0ibWlkZGxlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjY2JkNWUxIiBmb250LXNpemU9IjEyIj5bSW1hZ2VdPC90ZXh0Pjwvc3ZnPg=='">
+                </div>
+            </div>
+
+            <!-- Therapist Card -->
+            <div class="role-card" id="card-therapist">
+                <div class="role-card-content">
+                    <div class="role-icon">
+                        <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="black" stroke-width="2"><circle cx="12" cy="8" r="5"></circle><path d="M3 21v-2a7 7 0 0 1 14 0v2"></path><circle cx="16" cy="18" r="3"></circle></svg>
+                    </div>
+                    <h3 class="role-title">Therapist</h3>
+                    <p class="role-desc">Listen - Analyse - Act</p>
+                    <div class="role-actions">
+                        <button class="btn-primary login-btn" onclick="selectRole('therapist', 'login')">Login</button>
+                        <button class="btn-outline register-btn" onclick="selectRole('therapist', 'register')">Register</button>
+                    </div>
+                </div>
+                <div class="role-illustration">
+                    <img src="assets/Calmbridge/therapist-illustration.png" alt="Therapist Illustration" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMjAiIGhlaWdodD0iMTIwIiB2aWV3Qm94PSIwIDAgMTIwIDEyMCI+PHJlY3Qgd2lkdGg9IjEyMCIgaGVpZ2h0PSIxMjAiIGZpbGw9IiNmM2Y0ZjYiLz48dGV4dCB4PSI1MCIgeT0iNTAlIiBkb21pbmFudC1iYXNlbGluZT0ibWlkZGxlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjY2JkNWUxIiBmb250LXNpemU9IjEyIj5bSW1hZ2VdPC90ZXh0Pjwvc3ZnPg=='">
+                </div>
+            </div>
+        </div>
+
+        <!-- Stepper indicator -->
+        <div class="stepper-indicator">
+            <div class="step active">
+                <div class="step-circle"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></div>
+                <span class="step-label">Step 0</span>
+            </div>
+            <div class="step-line"></div>
+            <div class="step">
+                <div class="step-circle dot"></div>
+                <span class="step-label">Step 1</span>
+            </div>
+            <div class="step-line"></div>
+            <div class="step">
+                <div class="step-circle dot"></div>
+                <span class="step-label">Step 2</span>
+            </div>
+        </div>
+    </div>
+
+    <script src="CBWeb.js"></script>
+</body>
+</html>

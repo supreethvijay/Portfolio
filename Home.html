@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supreeth Vijay | UX Portfolio</title>
+    <meta name="description" content="Portfolio of Supreeth Vijay - UX Designer specializing in Empathy, Data & AI.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- Splash Video Overlay -->
+    <div id="splash-overlay" class="splash-overlay">
+        <div class="splash-backdrop"></div>
+        <div class="splash-container">
+            <div class="splash-video-wrapper">
+                <video id="splash-video" preload="auto" playsinline autoplay>
+                    <source src="assets/SplashVideos/Intro.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+
+                <!-- Creative Tap to Play Overlay -->
+                <div id="splash-play-overlay" class="splash-play-overlay active">
+                    <div class="play-overlay-content">
+                        <div class="play-pulse-ring">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M8 5v14l11-7z" />
+                            </svg>
+                        </div>
+                        <span class="play-overlay-title">TAP TO PLAY</span>
+                        <p class="play-overlay-desc">Listen to my 20s introduction</p>
+                    </div>
+                </div>
+
+
+
+
+
+                <!-- Custom Overlay Controls -->
+                <div class="splash-controls">
+                    <button id="splash-play-btn" class="splash-ctrl-btn" aria-label="Play/Pause">
+                        <svg class="play-icon" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M8 5v14l11-7z" />
+                        </svg>
+                        <svg class="pause-icon" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"
+                            style="display:none;">
+                            <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" />
+                        </svg>
+                    </button>
+
+                    <div class="splash-progress-container">
+                        <div class="splash-progress-track">
+                            <div id="splash-progress-bar" class="splash-progress-bar"></div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+            <button id="splash-skip-btn" class="splash-skip-btn">
+                <span>Skip Intro</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="5 4 15 12 5 20 5 4"></polygon>
+                    <line x1="19" y1="5" x2="19" y2="19"></line>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container header-container">
+            <a href="#">
+                <img src="assets/images/logo_new.png" data-hover="assets/images/Sup_Onhover.png"
+                    alt="Supreeth Vijay Logo" class="logo-img">
+            </a>
+
+            <button class="mobile-menu-btn" aria-label="Toggle Navigation">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#work">Work</a></li>
+                    <!--   <li><a href="#ux-reviews">UX Reviews <span class="badge-wip">WIP</span></a></li>
+                    <li><a href="#playground">Playground <span class="badge-wip">WIP</span></a></li> -->
+                    <li><a href="MediumArticles.Html" class="nav-link">Articles</a></li>
+                    <li><a href="Resume.html" class="nav-link">Resume</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact" class="nav-highlight">Let’s Connect</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="hero-section">
+            <div class="container hero-container">
+                <div class="hero-content">
+                    <span class="greeting"><span class="wave">👋</span> Hello, I’m Supreeth Vijay</span>
+                    <p class="hero-role">UX , Product & AI Designer based in Bengaluru</p>
+                    <h1>I craft intuitive, human-centered products that blend
+                        <span class="accent-text">Empathy,</span>
+                        <span class="accent-text">Data</span>
+                        <span class="accent-text">& AI</span> to drive engagement, trust & growth.
+                    </h1>
+                    <p class="positioning-statement">Let's craft experiences that inspire trust and create real impact.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="#work" class="btn btn-primary">Explore My Work</a>
+                        <button id="hero-watch-intro-btn" class="btn btn-video">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M8 5v14l11-7z" />
+                            </svg>
+                            <span>Watch Intro Video</span>
+                        </button>
+                        <a href="#resume" class="btn btn-secondary resume-download-btn">Resume <svg
+                                class="download-icon" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M21 15V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V15"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path d="M7 10L12 15L17 10" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M12 15V3" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg></a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="profile-card">
+                        <img src="assets/images/Supreeth_Pro.png" alt="Supreeth Vijay" class="profile-img">
+                        <div class="status-badge">
+                            <span class="status-dot"></span> Open for Work
+                        </div>
+                        <div class="floating-element float-1"></div>
+                        <div class="floating-element float-2"></div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="work" class="projects-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>My Projects</h2>
+                    <p class="section-subtitle">A selection of my recent works showcasing how design thinking drives
+                        clarity, trust, and impact.</p>
+                </div>
+                <div class="projects-grid">
+                    <!-- Project Card 1 : Allen Brothers-->
+                    <article class="project-card" data-href="AllenBrothers.html">
+                        <div class="project-thumb">
+                            <img src="assets/allenbrothers/coverImage/AB_Thumbnail.png" alt="Allen Brothers">
+                        </div>
+                        <div class="project-info">
+                            <div class="tags">
+                                <span class="tag">Client Project</span>
+                                <span class="tag">E-Commerce</span>
+                            </div>
+                            <h3>Allen Brothers</h3>
+                            <p></p>
+                            <p>Redesigning corporate UX for clarity, accessibility, and trust.</p>
+                            <!-- <span>A human-centered redesign that simplified navigation, improved accessibility, and
+                                guided enterprise buyers with confidence through a complex B2B & B2C platform.</span> -->
+                            <a href="AllenBrothers.html" class="link-arrow">View Case Study &rarr;</a>
+                        </div>
+                    </article>
+
+
+
+                    <!-- Project Card 2: DTP -->
+                    <article class="project-card" data-href="DTP.html">
+                        <div class="project-thumb">
+                            <img src="assets/DTP/Cover image/DTP.png" alt="DTP Project">
+                        </div>
+                        <div class="project-info">
+                            <div class="tags">
+                                <span class="tag">Personal Project</span>
+                                <span class="tag">Ergonomics</span>
+                            </div>
+                            <h3>Design Thinking Project</h3>
+                            <p>Turning everyday workspaces into experiences that truly support you.</p>
+                            <a href="DTP.html" class="link-arrow">View Case Study &rarr;</a>
+                        </div>
+                    </article>
+
+                    <!-- Project Card 3 : CalmBridge -->
+                    <article class="project-card" data-href="CalmBridge.html">
+                        <div class="project-thumb">
+                            <img src="assets/Calmbridge/HeroImage/CB_HeroImage.png" alt="CalmBridge App Mockup">
+                        </div>
+                        <div class="project-info">
+                            <div class="tags">
+                                <span class="tag">Product Design</span>
+                                <span class="tag">AI & Empathy</span>
+                            </div>
+                            <h3>CalmBridge</h3>
+                            <p>Bridging the gap between work-life transition and remote worker well-being.</p>
+                            <a href="CalmBridge.html" class="link-arrow">View Case Study &rarr;</a>
+                        </div>
+                    </article>
+
+                    <!-- Project Card 4 : Tap 2 Pay -->
+                    <article class="project-card" data-href="T2P.html">
+                        <div class="project-thumb">
+                            <img src="assets/T2P/HeroImage/Hero.png" alt="Tap 2 Pay Interface">
+                        </div>
+                        <div class="project-info">
+                            <div class="tags">
+                                <span class="tag">UX Design</span>
+                                <span class="tag">Wearables</span>
+                            </div>
+                            <h3>Tap 2 Pay</h3>
+                            <p>Designing a seamless and user-friendly payment experience tailored for the Apple Watch.
+                            </p>
+                            <a href="T2P.html" class="link-arrow">View Case Study &rarr;</a>
+                        </div>
+                    </article>
+
+                    <!-- Project Card 5 : Senior Citizen App -->
+                    <article class="project-card" data-href="SCA.html">
+                        <div class="project-thumb">
+                            <img src="assets/SCA/HeroSection/HeroSCA.png" alt="Senior Citizen App Mockup" style="object-position: top;">
+                        </div>
+                        <div class="project-info">
+                            <div class="tags">
+                                <span class="tag">UX Research</span>
+                                <span class="tag">Mobile Design</span>
+                            </div>
+                            <h3>Senior Citizen App</h3>
+                            <p>Designing an accessible, inclusive mobile experience that empowers seniors with confidence and independence.</p>
+                            <a href="SCA.html" class="link-arrow">View Case Study &rarr;</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+        <!-- Expertise Section -->
+        <section class="expertise-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Expertise</h2>
+                    <p class="section-subtitle">Turning ideas into experiences that connect, engage, and grow.</p>
+                </div>
+                <div class="expertise-grid">
+                    <div class="expertise-card">
+                        <!-- UX RESEARCH -->
+                        <div class="icon-box">
+                            <img src="assets/svg/uxresearch.svg" alt="UX Research icon" width="40" height="40">
+
+                        </div>
+                        <h3>UX Research</h3>
+                        <p>Understanding people beyond data
+                            to shape informed design decisions.</p>
+                    </div>
+                    <div class="expertise-card">
+                        <!-- UI Design -->
+                        <div class="icon-box">
+                            <img src="assets/svg/uidesign.svg" alt="UI Design icon" width="40" height="40">
+                        </div>
+                        <h3>UI Design</h3>
+                        <p>Designing intuitive interfaces beyond visuals to deliver accessible experiences.
+                        </p>
+                    </div>
+                    <div class="expertise-card">
+                        <!-- Prototyping -->
+                        <div class="icon-box">
+                            <img src="assets/svg/Prototype.svg" alt="Prototyping icon" width="40" height="40">
+                        </div>
+                        <h3>Prototyping</h3>
+                        <p>Turning ideas into prototypes beyond concepts to validate real user flows.</p>
+                    </div>
+                    <div class="expertise-card">
+                        <!-- AI Assist Tools-->
+                        <div class="icon-box">
+                            <img src="assets/svg/AI.svg" alt="AI Assist icon" width="40" height="40">
+                        </div>
+                        <h3>AI Assist Tools</h3>
+                        <p>Using AI beyond automation to accelerate exploration and design decisions.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Credibility Snapshot -->
+        <section class="credibility-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Credibility Snapshot</h2>
+                    <p class="section-subtitle">A quick view of the experience, impact, and trust built along the way.
+                    </p>
+                </div>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <span class="stat-number">5+</span>
+                        <div class="stat-text">
+                            <span class="stat-label">Years of Experience</span>
+                            <span class="stat-desc">Crafting digital experiences</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">5</span>
+                        <div class="stat-text">
+                            <span class="stat-label">Projects Delivered</span>
+                            <span class="stat-desc">Across various industries</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">5</span>
+                        <div class="stat-text">
+                            <span class="stat-label">Happy<br>Clients</span>
+
+                            <span class="stat-desc">Global partnerships</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">98%</span>
+                        <div class="stat-text">
+                            <span class="stat-label">Client Satisfaction</span>
+                            <span class="stat-desc">Repeat business rate</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trusted By Section -->
+        <section class="trusted-by-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Trusted by teams that value good design</h2>
+                    <p class="section-subtitle">Collaborations built on trust, clarity, and impact. </p>
+                </div>
+            </div>
+
+            <div class="logos-marquee">
+                <div class="logos-track">
+                    <!-- Set 1 -->
+                    <img src="assets/Clients/Image%20(Allen%20Brothers).png" alt="Allen Brothers"
+                        class="client-logo-img">
+                    <img src="assets/Clients/Image%20(Electronic%20Express).png" alt="Electronic Express"
+                        class="client-logo-img">
+                    <img src="assets/Clients/Image%20(Enterprise).png" alt="Enterprise" class="client-logo-img">
+                    <img src="assets/Clients/Image%20(Retisio%20Pvt%20Ltd).png" alt="Retisio" class="client-logo-img">
+
+
+                </div>
+            </div>
+        </section>
+
+        <!-- About Me Section -->
+        <section id="about" class="about-section">
+            <canvas id="constellation-canvas"></canvas>
+            <div class="container about-container">
+                <div class="about-image">
+                    <img src="assets/images/Image (Supreeth Vijay).png" alt="Supreeth Vijay">
+                </div>
+                <div class="about-text">
+                    <h2>About Me</h2>
+                    <p class="narrative">I'm Supreeth Vijay, a UX & Product Designer from Bengaluru — someone who
+                        believes design is less about pixels and more about people.</p>
+                    <p class="narrative">Growing up as a physical challenge taught me resilience, patience, and how
+                        thoughtful design can restore independence. From overcoming surgeries to earning "Best Outgoing
+                        Student" at AVES in 10th, at PES University in MCA, to working across Wipro, ANZ, Infosys, and
+                        Retisio Pvt Ltd, I've lived every phase as a learning curve in problem-solving and empathy.</p>
+
+                    <p class="narrative">After six years in tech, I transitioned into UX, blending my engineering roots
+                        with human-centred design to craft interfaces that are accessible, emotionally intelligent, and
+                        meaningful.</p>
+
+                    <p class="narrative">For me, good design doesn't just look elegant, it helps people feel capable.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Recognition, Awards & Certifications -->
+        <section class="recognition-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Recognition & Awards</h2>
+                    <p class="section-subtitle">Milestones that reflect growth, learning, and design impact. </p>
+                </div>
+                <div class="carousel-wrapper">
+                    <button class="carousel-btn prev-btn" aria-label="Previous">&#10094;</button>
+                    <div class="recognition-carousel">
+                        <!-- Card 1: Best Out-Going Student -->
+                        <div class="recognition-item">
+                            <div class="cert-image-wrapper">
+                                <img src="assets/Awards/MCA.jpg" alt="Best Out-Going Student">
+                                <span class="cert-badge badge-left">🏆 Award</span>
+                                <span class="cert-badge badge-right">2012</span>
+                            </div>
+                            <div class="cert-content">
+                                <h3>Best Out-Going Student</h3>
+                                <p class="org-name">PES School of Engineering</p>
+                                <p class="cert-desc">Awarded "Best Outgoing Student" in Post-Graduation, recognizing
+                                    academic excellence, leadership, and consistent performance.</p>
+                            </div>
+                        </div>
+
+                        <!-- Card 2: Best Out-Standing Student -->
+                        <div class="recognition-item">
+                            <div class="cert-image-wrapper">
+                                <img src="assets/Awards/AVESjpeg.jpeg" alt="Best Out-Standing Student">
+                                <span class="cert-badge badge-left">🏆 Award</span>
+                                <span class="cert-badge badge-right">2004</span>
+                            </div>
+                            <div class="cert-content">
+                                <h3>Best Out-Standing Student</h3>
+                                <p class="org-name">AV Education Society</p>
+                                <p class="cert-desc">Awarded "Best Outstanding Student" in 10th Grade, presented by Shri
+                                    S.P. Sangliyana — recognizing academic excellence and character.</p>
+                            </div>
+                        </div>
+
+                        <!-- Card 3: AI First Designer -->
+                        <div class="recognition-item">
+                            <div class="cert-image-wrapper">
+                                <img src="assets/Certificates/course-certificate-ai-for-designers.jpg"
+                                    alt="AI First Designer">
+                                <span class="cert-badge badge-left">🎓 Certification</span>
+                                <span class="cert-badge badge-right">2026</span>
+                            </div>
+                            <div class="cert-content">
+                                <h3>AI for Designer</h3>
+                                <p class="org-name">IxDF Course Certificate</p>
+                                <p class="cert-desc">Awarded the IxDF Course Certificate with Top 10% Distinction,
+                                    recognizing exceptional coursework performance exceeding rigorous academic
+                                    benchmarks.</p>
+                            </div>
+                        </div>
+
+                        <!-- Card 5: Framer -->
+                        <div class="recognition-item">
+                            <div class="cert-image-wrapper">
+                                <img src="assets/Certificates/Framer.png" alt="Framer">
+                                <span class="cert-badge badge-left">🎓 Certification</span>
+                                <span class="cert-badge badge-right">2025</span>
+                            </div>
+                            <div class="cert-content">
+                                <h3>Framer</h3>
+                                <p class="org-name">DesignBoat UI/UX School</p>
+                                <p class="cert-desc">Awarded the Certificate of Participation for the Framer Online
+                                    Program, recognizing proficiency in modern web design.</p>
+                            </div>
+                        </div>
+
+                        <!-- Card 6: Designing for Dashboard -->
+                        <div class="recognition-item">
+                            <div class="cert-image-wrapper">
+                                <img src="assets/Certificates/Dashboard.png" alt="Designing for Dashboard">
+                                <span class="cert-badge badge-left">🎓 Certification</span>
+                                <span class="cert-badge badge-right">2024</span>
+                            </div>
+                            <div class="cert-content">
+                                <h3> Dashboard Design</h3>
+                                <p class="org-name">DesignBoat UI/UX School</p>
+                                <p class="cert-desc">Awarded the Certificate of Participation for the Designing for
+                                    Dashboard Program, demonstrating proficiency in dashboard UX and data visualization
+                                    design.</p>
+                            </div>
+                        </div>
+
+                        <!-- Card 7: Apple Watch -->
+                        <div class="recognition-item">
+                            <div class="cert-image-wrapper">
+                                <img src="assets/Certificates/AppleWatch.png" alt="Apple Watch">
+                                <span class="cert-badge badge-left">🎓 Certification</span>
+                                <span class="cert-badge badge-right">2021</span>
+                            </div>
+                            <div class="cert-content">
+                                <h3> Apple Watch Program</h3>
+                                <p class="org-name">DesignBoat UI/UX School</p>
+                                <p class="cert-desc">Awarded the Certificate of Participation for the Apple Watch
+                                    Program, recognizing skills in wearable UX and interaction design.</p>
+                            </div>
+                        </div>
+                        <!-- Card 7: UX Course -->
+                        <div class="recognition-item">
+                            <div class="cert-image-wrapper">
+                                <img src="assets/Certificates/UX.png" alt="UX Course">
+                                <span class="cert-badge badge-left">🎓 Certification</span>
+                                <span class="cert-badge badge-right">2020</span>
+                            </div>
+                            <div class="cert-content">
+                                <h3> UI/UX Designer</h3>
+                                <p class="org-name">DesignBoat UI/UX School</p>
+                                <p class="cert-desc">Certified as a Pro UI/UX Designer, recognizing exceptional
+                                    performance and successful completion of an intensive UI/UX program.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-btn next-btn" aria-label="Next">&#10095;</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+
+        <section class="testimonials-section">
+            <div class="container">
+
+                <div class="section-header">
+                    <h2>Testimonials</h2>
+                    <p class="section-subtitle">What teammates and mentors say
+                        about working together to create meaningful design outcomes</p>
+
+                </div>
+
+                <div class="testimonials-wrapper">
+                    <button class="slider-btn prev-btn testimonial-prev-btn"
+                        aria-label="Previous Testimonial">&#10094;</button>
+                    <div class="testimonials-slider">
+                        <!-- Card 1 -->
+                        <div class="testimonial-card">
+                            <div class="card-top-row">
+                                <div class="quote-icon-wrapper">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M10 11L8 11C6.89543 11 6 11.8954 6 13V17C6 18.1046 6.89543 19 8 19H12V13H10V11ZM10 11L12 7H8L6 11M18 11L16 11C14.8954 11 14 11.8954 14 13V17C14 18.1046 14.8954 19 16 19H20V13H18V11ZM18 11L20 7H16L14 11"
+                                            stroke="white" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </svg>
+                                </div>
+                                <div class="slide-counter">1/5</div>
+                            </div>
+                            <p class="testimonial-quote">"Supreeth is extremely proficient UX designer and has shown the
+                                same in professional journey at RETISIO. He understands the user and business domain
+                                which helps product steer the experience of user very smoothly and achieving the<span
+                                    class="dots">...</span><span class="more-text u-hidden"> the business
+                                    KPIs at the same time. His contribution and sincerity speaks itself in the product
+                                    usage. Supreeth is surely a great asset."
+                                </span></p>
+                            <button class="read-more-link">Read More</button>
+                            <div class="card-divider"></div>
+                            <div class="author">
+                                <strong class="author-name">Bhrigu Tak</strong>
+                                <span class="author-title">AI Product Management • JIO</span>
+                            </div>
+                        </div>
+
+                        <!-- Card 2 -->
+                        <div class="testimonial-card">
+                            <div class="card-top-row">
+                                <div class="quote-icon-wrapper">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M10 11L8 11C6.89543 11 6 11.8954 6 13V17C6 18.1046 6.89543 19 8 19H12V13H10V11ZM10 11L12 7H8L6 11M18 11L16 11C14.8954 11 14 11.8954 14 13V17C14 18.1046 14.8954 19 16 19H20V13H18V11ZM18 11L20 7H16L14 11"
+                                            stroke="white" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </svg>
+                                </div>
+                                <div class="slide-counter">2/5</div>
+                            </div>
+                            <p class="testimonial-quote">"I am pleased to recommend Supreeth for his exceptional work on
+                                products like Retisio Analytics, Intelligent Search and Recommendations. He demonstrated
+                                a remarkable ability to create designs that are not only clean and contemporary but<span
+                                    class="dots">...</span><span class="more-text u-hidden"> also highly
+                                    usable and intuitive. His attention to detail and user-centric approach ensured that
+                                    our interfaces are both visually appealing and easy to navigate. Supreeth
+                                    consistently delivered high-quality work that greatly enhanced the user experience
+                                    of our applications. I am confident that he will be an asset to any team."</span>
+                            </p>
+                            <button class="read-more-link">Read More</button>
+                            <div class="card-divider"></div>
+                            <div class="author">
+                                <strong class="author-name">Gopi Joshi</strong>
+                                <span class="author-title">Associate Product Director • Retisio Pvt Ltd</span>
+                            </div>
+                        </div>
+
+                        <!-- Card 3 (Formerly Card 5) -->
+                        <div class="testimonial-card">
+                            <div class="card-top-row">
+                                <div class="quote-icon-wrapper">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M10 11L8 11C6.89543 11 6 11.8954 6 13V17C6 18.1046 6.89543 19 8 19H12V13H10V11ZM10 11L12 7H8L6 11M18 11L16 11C14.8954 11 14 11.8954 14 13V17C14 18.1046 14.8954 19 16 19H20V13H18V11ZM18 11L20 7H16L14 11"
+                                            stroke="white" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </svg>
+                                </div>
+                                <div class="slide-counter">3/5</div>
+                            </div>
+                            <p class="testimonial-quote">"
+                                I had the pleasure of working with Supreeth as part of our team, and I can confidently
+                                say he is a highly skilled and hardworking website designer. He consistently delivered
+                                high-quality designs with great attention to detail
+                                <span class="dots">...</span><span class="more-text u-hidden"> and a strong
+                                    understanding of user experience and business needs. His designs
+                                    played a key role in client demos and presentations, helping me clearly communicate
+                                    concepts and ultimately receive very positive feedback from clients. He was always
+                                    proactive, open to feedback, and committed to delivering the best possible outcome,
+                                    even under tight timelines.
+                                    Supreeth would be a valuable asset to any team looking for a dedicated designer who
+                                    combines creativity with professionalism. I highly recommend him and would gladly
+                                    work with him again.
+                                    ."</span>
+                            </p>
+                            <button class="read-more-link">Read More</button>
+                            <div class="card-divider"></div>
+                            <div class="author">
+                                <strong class="author-name">Debbani Chattopadhyay </strong>
+                                <span class="author-title">Senior Business Analyst • AIEnterprise Inc</span>
+                            </div>
+                        </div>
+
+                        <!-- Card 4 (Formerly Card 3) -->
+                        <div class="testimonial-card">
+                            <div class="card-top-row">
+                                <div class="quote-icon-wrapper">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M10 11L8 11C6.89543 11 6 11.8954 6 13V17C6 18.1046 6.89543 19 8 19H12V13H10V11ZM10 11L12 7H8L6 11M18 11L16 11C14.8954 11 14 11.8954 14 13V17C14 18.1046 14.8954 19 16 19H20V13H18V11ZM18 11L20 7H16L14 11"
+                                            stroke="white" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </svg>
+                                </div>
+                                <div class="slide-counter">4/5</div>
+                            </div>
+                            <p class="testimonial-quote">"I had the pleasure of working with Supreeth at Infosys Limited
+                                in the past where he served as a Technology Analyst while I was the Technology Lead in
+                                the team, Throughout our time together, I was consistently impressed by his dedication,
+                                analytical skills.
+                                <span class="dots">...</span><span class="more-text u-hidden"> Supreeth
+                                    demonstrated a deep understanding of complex technical cocepts, particularly in
+                                    handling data issues that involved large DB stored procedures.His approach
+                                    to debugging
+                                    was methodical, conducting thorough root cause analysis (RCA) to identify the source
+                                    of
+                                    issues. This attention to detail would be helpful especially when we were dealing
+                                    with
+                                    challenging and high-impact problems. He also contributed to the app
+                                    enhancements.Beyond this,
+                                    Supreeth displayed a positive attitude and an admirable "never give up" mentality.
+                                    He consistently demonstrated good productivity, he was a reliable resource that I
+                                    could always count on.
+                                    I highly recommend Supreeth for any future roles. His technical skills, analyzing
+                                    skills, positive attitude, and dedication to continuous improvement will make him an
+                                    asset to any team."</span>
+                            </p>
+                            <button class="read-more-link">Read More</button>
+                            <div class="card-divider"></div>
+                            <div class="author">
+                                <strong class="author-name">Archana G S</strong>
+                                <span class="author-title">Lead Software Engineer • JPMorgan Chase &
+                                    Co.</span>
+                            </div>
+                        </div>
+
+                        <!-- Card 5 (Formerly Card 4) -->
+                        <div class="testimonial-card">
+                            <div class="card-top-row">
+                                <div class="quote-icon-wrapper">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M10 11L8 11C6.89543 11 6 11.8954 6 13V17C6 18.1046 6.89543 19 8 19H12V13H10V11ZM10 11L12 7H8L6 11M18 11L16 11C14.8954 11 14 11.8954 14 13V17C14 18.1046 14.8954 19 16 19H20V13H18V11ZM18 11L20 7H16L14 11"
+                                            stroke="white" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </svg>
+                                </div>
+                                <div class="slide-counter">5/5</div>
+                            </div>
+                            <p class="testimonial-quote">"Supreeth is an excellent team worker and dedicated person. He
+                                just tries to put in his best in whatever he does and has excellent technical knowledge.
+                                He is also very much eager in learning new things and has excellent team building
+                                skills.<span class="dots">...</span><span class="more-text u-hidden">
+                                    I have worked with him in the same team for a year and he seems to be a very good
+                                    team player and dedicated worker. Just wishing him all the very best in all his
+                                    future endeavours.
+                                    "</span></p>
+                            <button class="read-more-link">Read More</button>
+                            <div class="card-divider"></div>
+                            <div class="author">
+                                <strong class="author-name">Swetha Ranganathan</strong>
+                                <span class="author-title">PSenior Systems Engineer • Infosys.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="slider-btn next-btn testimonial-next-btn-main"
+                        aria-label="Next Testimonial">&#10095;</button>
+
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Let's Connect -->
+
+        <section id="contact" class="connect-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Let’s Connect</h2>
+                    <p class="section-subtitle u-max-width-xl u-margin-0">Open for opportunities,
+                        collaborations, and meaningful design conversations.</p>
+                    <div class="location-badge u-mt-1">
+                        <!-- Tiny SVG or just text marker -->
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="teal" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M12 2a7 7 0 00-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 00-7-7zm0 9.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5z" />
+                        </svg>
+                        Based in Bengaluru, India
+                        <span class="status-dot"></span>
+                    </div>
+                </div>
+
+                <div class="contact-cards-wrapper">
+                    <!-- Email Card -->
+                    <a href="mailto:supreeth.gani@gmail.com" class="connect-card email-card">
+                        <div class="icon-box email-icon">
+                            <svg viewBox="0 0 24 24" fill="#ffffff" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6zm-2 0l-8 5-8-5h16zm0 12H4V8l8 5 8-5v10z" />
+                            </svg>
+                        </div>
+                        <h3>Email Me</h3>
+                        <p class="card-desc">Message me, and I'll get back within 24 hrs.</p>
+                        <p class="card-link">supreeth.gani@gmail.com</p>
+                    </a>
+
+                    <!-- LinkedIn Card -->
+                    <a href="https://linkedin.com/in/supreethvijay/" target="_blank" class="connect-card linkedin-card">
+                        <div class="icon-box linkedin-icon">
+                            <svg viewBox="0 0 24 24" fill="#ffffff" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                            </svg>
+                        </div>
+                        <h3>LinkedIn</h3>
+                        <p class="card-desc">Let's connect professionally and stay in touch.</p>
+                        <p class="card-link">linkedin.com/in/supreethvijay/</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Redesigned -->
+    <footer class="site-footer">
+        <div class="container footer-flex">
+            <p>&copy; 2025 Supreeth Vijay | UX Designer / UX Researcher / Product Designer / AI Designer / Vibe Coder /
+                in Bangalore
+            </p>
+            <div class="social-links-footer">
+                <a href="mailto:supreeth.gani@gmail.com" class="social-circle" aria-label="Email">
+                    <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                    </svg>
+                </a>
+                <a href="https://linkedin.com/in/supreethvijay/" target="_blank" class="social-circle"
+                    aria-label="LinkedIn">
+                    <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
