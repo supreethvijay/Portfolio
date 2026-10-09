@@ -13,6 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="styles.css">
+    <link rel="preload" as="image" href="assets/images/Supreeth_Pro.png">
 </head>
 
 <body>
@@ -82,7 +83,7 @@
         <div class="container header-container">
             <a href="#">
                 <img src="assets/images/logo_new.png" data-hover="assets/images/Sup_Onhover.png"
-                    alt="Supreeth Vijay Logo" class="logo-img">
+                    alt="Supreeth Vijay Logo" class="logo-img" fetchpriority="high" decoding="async">
             </a>
 
             <button class="mobile-menu-btn" aria-label="Toggle Navigation">
@@ -143,7 +144,9 @@
                 </div>
                 <div class="hero-visual">
                     <div class="profile-card">
-                        <img src="assets/images/Supreeth_Pro.png" alt="Supreeth Vijay" class="profile-img">
+                        <div class="profile-img-wrapper">
+                            <img src="assets/images/Supreeth_Pro.png" alt="Supreeth Vijay" class="profile-img" fetchpriority="high" decoding="async">
+                        </div>
                         <div class="status-badge">
                             <span class="status-dot"></span> Open for Work
                         </div>
@@ -167,7 +170,7 @@
                     <!-- Project Card 1 : Allen Brothers-->
                     <article class="project-card" data-href="AllenBrothers.html">
                         <div class="project-thumb">
-                            <img src="assets/allenbrothers/coverImage/AB_Thumbnail.png" alt="Allen Brothers">
+                            <img src="assets/allenbrothers/coverImage/AB_Thumbnail.png" alt="Allen Brothers" loading="lazy" decoding="async">
                         </div>
                         <div class="project-info">
                             <div class="tags">
@@ -188,7 +191,7 @@
                     <!-- Project Card 2: DTP -->
                     <article class="project-card" data-href="DTP.html">
                         <div class="project-thumb">
-                            <img src="assets/DTP/Cover image/DTP.png" alt="DTP Project">
+                            <img src="assets/DTP/Cover image/DTP.png" alt="DTP Project" loading="lazy" decoding="async">
                         </div>
                         <div class="project-info">
                             <div class="tags">
@@ -204,7 +207,7 @@
                     <!-- Project Card 3 : CalmBridge -->
                     <article class="project-card" data-href="CalmBridge.html">
                         <div class="project-thumb">
-                            <img src="assets/Calmbridge/HeroImage/CB_HeroImage.png" alt="CalmBridge App Mockup">
+                            <img src="assets/Calmbridge/HeroImage/CB_HeroImage.png" alt="CalmBridge App Mockup" fetchpriority="high" decoding="async">
                         </div>
                         <div class="project-info">
                             <div class="tags">
@@ -220,7 +223,7 @@
                     <!-- Project Card 4 : Tap 2 Pay -->
                     <article class="project-card" data-href="T2P.html">
                         <div class="project-thumb">
-                            <img src="assets/T2P/HeroImage/Hero.png" alt="Tap 2 Pay Interface">
+                            <img src="assets/T2P/HeroImage/Hero.png" alt="Tap 2 Pay Interface" fetchpriority="high" decoding="async">
                         </div>
                         <div class="project-info">
                             <div class="tags">
@@ -238,7 +241,7 @@
                     <article class="project-card" data-href="SCA.html">
                         <div class="project-thumb">
                             <img src="assets/SCA/HeroSection/HeroSCA.png" alt="Senior Citizen App Mockup"
-                                style="object-position: top;">
+                                style="object-position: top;" fetchpriority="high" decoding="async">
                         </div>
                         <div class="project-info">
                             <div class="tags">
@@ -265,7 +268,7 @@
                     <div class="expertise-card">
                         <!-- UX RESEARCH -->
                         <div class="icon-box">
-                            <img src="assets/svg/uxresearch.svg" alt="UX Research icon" width="40" height="40">
+                            <img src="assets/svg/uxresearch.svg" alt="UX Research icon" width="40" height="40" loading="lazy" decoding="async">
 
                         </div>
                         <h3>UX Research</h3>
@@ -275,7 +278,7 @@
                     <div class="expertise-card">
                         <!-- UI Design -->
                         <div class="icon-box">
-                            <img src="assets/svg/UIDesign.svg" alt="UI Design icon" width="40" height="40">
+                            <img src="assets/svg/UIDesign.svg" alt="UI Design icon" width="40" height="40" loading="lazy" decoding="async">
                         </div>
                         <h3>UI Design</h3>
                         <p>Designing intuitive interfaces beyond visuals to deliver accessible experiences.
@@ -284,7 +287,7 @@
                     <div class="expertise-card">
                         <!-- Prototyping -->
                         <div class="icon-box">
-                            <img src="assets/svg/Prototype.svg" alt="Prototyping icon" width="40" height="40">
+                            <img src="assets/svg/Prototype.svg" alt="Prototyping icon" width="40" height="40" loading="lazy" decoding="async">
                         </div>
                         <h3>Prototyping</h3>
                         <p>Turning ideas into prototypes beyond concepts to validate real user flows.</p>
@@ -292,7 +295,7 @@
                     <div class="expertise-card">
                         <!-- AI Assist Tools-->
                         <div class="icon-box">
-                            <img src="assets/svg/AI.svg" alt="AI Assist icon" width="40" height="40">
+                            <img src="assets/svg/AI.svg" alt="AI Assist icon" width="40" height="40" loading="lazy" decoding="async">
                         </div>
                         <h3>AI Assist Tools</h3>
                         <p>Using AI beyond automation to accelerate exploration and design decisions.</p>
@@ -356,11 +359,11 @@
                 <div class="logos-track">
                     <!-- Set 1 -->
                     <img src="assets/Clients/Image%20(Allen%20Brothers).png" alt="Allen Brothers"
-                        class="client-logo-img">
+                        class="client-logo-img" loading="lazy" decoding="async">
                     <img src="assets/Clients/Image%20(Electronic%20Express).png" alt="Electronic Express"
-                        class="client-logo-img">
-                    <img src="assets/Clients/Image%20(Enterprise).png" alt="Enterprise" class="client-logo-img">
-                    <img src="assets/Clients/Image%20(Retisio%20Pvt%20Ltd).png" alt="Retisio" class="client-logo-img">
+                        class="client-logo-img" loading="lazy" decoding="async">
+                    <img src="assets/Clients/Image%20(Enterprise).png" alt="Enterprise" class="client-logo-img" loading="lazy" decoding="async">
+                    <img src="assets/Clients/Image%20(Retisio%20Pvt%20Ltd).png" alt="Retisio" class="client-logo-img" loading="lazy" decoding="async">
 
 
                 </div>
@@ -372,7 +375,7 @@
             <canvas id="constellation-canvas"></canvas>
             <div class="container about-container">
                 <div class="about-image">
-                    <img src="assets/images/Image (Supreeth Vijay).png" alt="Supreeth Vijay">
+                    <img src="assets/images/Image (Supreeth Vijay).png" alt="Supreeth Vijay" loading="lazy" decoding="async">
                 </div>
                 <div class="about-text">
                     <h2>About Me</h2>
@@ -406,7 +409,7 @@
                         <!-- Card 1: Best Out-Going Student -->
                         <div class="recognition-item">
                             <div class="cert-image-wrapper">
-                                <img src="assets/Awards/MCA.jpg" alt="Best Out-Going Student">
+                                <img src="assets/Awards/MCA.jpg" alt="Best Out-Going Student" loading="lazy" decoding="async">
                                 <span class="cert-badge badge-left">🏆 Award</span>
                                 <span class="cert-badge badge-right">2012</span>
                             </div>
@@ -421,7 +424,7 @@
                         <!-- Card 2: Best Out-Standing Student -->
                         <div class="recognition-item">
                             <div class="cert-image-wrapper">
-                                <img src="assets/Awards/AVESjpeg.jpeg" alt="Best Out-Standing Student">
+                                <img src="assets/Awards/AVESjpeg.jpeg" alt="Best Out-Standing Student" loading="lazy" decoding="async">
                                 <span class="cert-badge badge-left">🏆 Award</span>
                                 <span class="cert-badge badge-right">2004</span>
                             </div>
@@ -437,7 +440,7 @@
                         <div class="recognition-item">
                             <div class="cert-image-wrapper">
                                 <img src="assets/Certificates/course-certificate-ai-for-designers.jpg"
-                                    alt="AI First Designer">
+                                    alt="AI First Designer" loading="lazy" decoding="async">
                                 <span class="cert-badge badge-left">🎓 Certification</span>
                                 <span class="cert-badge badge-right">2026</span>
                             </div>
@@ -453,7 +456,7 @@
                         <!-- Card 5: Framer -->
                         <div class="recognition-item">
                             <div class="cert-image-wrapper">
-                                <img src="assets/Certificates/Framer.png" alt="Framer">
+                                <img src="assets/Certificates/Framer.png" alt="Framer" loading="lazy" decoding="async">
                                 <span class="cert-badge badge-left">🎓 Certification</span>
                                 <span class="cert-badge badge-right">2025</span>
                             </div>
@@ -468,7 +471,7 @@
                         <!-- Card 6: Designing for Dashboard -->
                         <div class="recognition-item">
                             <div class="cert-image-wrapper">
-                                <img src="assets/Certificates/Dashboard.png" alt="Designing for Dashboard">
+                                <img src="assets/Certificates/Dashboard.png" alt="Designing for Dashboard" loading="lazy" decoding="async">
                                 <span class="cert-badge badge-left">🎓 Certification</span>
                                 <span class="cert-badge badge-right">2024</span>
                             </div>
@@ -484,7 +487,7 @@
                         <!-- Card 7: Apple Watch -->
                         <div class="recognition-item">
                             <div class="cert-image-wrapper">
-                                <img src="assets/Certificates/AppleWatch.png" alt="Apple Watch">
+                                <img src="assets/Certificates/AppleWatch.png" alt="Apple Watch" loading="lazy" decoding="async">
                                 <span class="cert-badge badge-left">🎓 Certification</span>
                                 <span class="cert-badge badge-right">2021</span>
                             </div>
@@ -498,7 +501,7 @@
                         <!-- Card 7: UX Course -->
                         <div class="recognition-item">
                             <div class="cert-image-wrapper">
-                                <img src="assets/Certificates/UX.png" alt="UX Course">
+                                <img src="assets/Certificates/UX.png" alt="UX Course" loading="lazy" decoding="async">
                                 <span class="cert-badge badge-left">🎓 Certification</span>
                                 <span class="cert-badge badge-right">2020</span>
                             </div>
@@ -784,7 +787,7 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </body>
 
 </html>

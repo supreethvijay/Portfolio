@@ -66,15 +66,22 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- Sticky Header Effect ---
     const header = document.querySelector('.site-header');
 
+    let ticking = false;
     window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            header.style.boxShadow = '0 10px 30px rgba(0,0,0,0.5)';
-            header.style.background = 'rgba(18, 18, 18, 0.95)';
-        } else {
-            header.style.boxShadow = 'none';
-            header.style.background = 'rgba(18, 18, 18, 0.85)';
+        if (!ticking) {
+            window.requestAnimationFrame(() => {
+                if (window.scrollY > 50) {
+                    header.style.boxShadow = '0 10px 30px rgba(0,0,0,0.5)';
+                    header.style.background = 'rgba(18, 18, 18, 0.95)';
+                } else {
+                    header.style.boxShadow = 'none';
+                    header.style.background = 'rgba(18, 18, 18, 0.85)';
+                }
+                ticking = false;
+            });
+            ticking = true;
         }
-    });
+    }, { passive: true });
 
     // --- Smooth Scroll Anchor Links ---
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -127,15 +134,20 @@ document.addEventListener('DOMContentLoaded', () => {
     const float1 = document.querySelector('.float-1');
     const float2 = document.querySelector('.float-2');
 
-    if (heroSection && float1 && float2) {
-        heroSection.addEventListener('mousemove', (e) => {
-            const x = e.clientX / window.innerWidth;
-            const y = e.clientY / window.innerHeight;
+    document.addEventListener('mousemove', (e) => {
+        // Floating elements logic
+        if (heroSection && float1 && float2) {
+            // Only apply floating parallax when hero section is somewhat in view
+            const heroRect = heroSection.getBoundingClientRect();
+            if (heroRect.top < window.innerHeight && heroRect.bottom > 0) {
+                const x = e.clientX / window.innerWidth;
+                const y = e.clientY / window.innerHeight;
 
-            float1.style.transform = `translate(${x * 20}px, ${y * 20}px)`;
-            float2.style.transform = `translate(-${x * 30}px, -${y * 30}px)`;
-        });
-    }
+                float1.style.transform = `translate(${x * 20}px, ${y * 20}px)`;
+                float2.style.transform = `translate(-${x * 30}px, -${y * 30}px)`;
+            }
+        }
+    });
 
     // --- Infinite Recognition Carousel Slider ---
     const carouselWrapper = document.querySelector('.carousel-wrapper');
@@ -503,14 +515,22 @@ function setupGallery(trackId, dotsContainerId, prevId, nextId) {
     }
 
     // Update dots on scroll
+    let wireframeTicking = false;
     track.addEventListener('scroll', () => {
-        const cardWidth = getCardWidth();
-        if (cardWidth === 0) return;
-        currentIndex = Math.round(track.scrollLeft / cardWidth);
-        dots.forEach((dot, index) => {
-            dot.classList.toggle('active', index === currentIndex);
-        });
-    });
+        if (!wireframeTicking) {
+            window.requestAnimationFrame(() => {
+                const cardWidth = getCardWidth();
+                if (cardWidth !== 0) {
+                    currentIndex = Math.round(track.scrollLeft / cardWidth);
+                    dots.forEach((dot, index) => {
+                        dot.classList.toggle('active', index === currentIndex);
+                    });
+                }
+                wireframeTicking = false;
+            });
+            wireframeTicking = true;
+        }
+    }, { passive: true });
 
     // Click dot to scroll
     dots.forEach((dot, index) => {

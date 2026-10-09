@@ -599,20 +599,28 @@ a:hover .download-icon {
         0 0 30px rgba(255, 207, 0, 0.15);
 }
 
-.profile-img {
+.profile-img-wrapper {
+    position: relative;
     width: 100%;
     height: 380px;
-    object-fit: cover;
     border-radius: var(--radius-md);
-    display: block;
-    /* Color grading via CSS filters to harmonize with the theme */
-    filter: brightness(1.05) contrast(1.1) saturate(1.1);
+    overflow: hidden;
     transition: transform var(--transition-bouncy);
 }
 
-.profile-card:hover .profile-img {
+.profile-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    /* Color grading via CSS filters to harmonize with the theme */
+    filter: brightness(1.05) contrast(1.1) saturate(1.1);
+}
+
+.profile-card:hover .profile-img-wrapper {
     transform: scale(1.02) translateY(-5px);
 }
+
 
 /* Confetti Pop Effect (Mixed Shapes & Bright Colors) */
 .profile-card::before,
